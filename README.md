@@ -37,11 +37,12 @@ Sprint tasks that elaborate on the stories, with technical details. These should
 
 ## Scrum Roles, and who will fill those roles
 **Tony Martin** - *DevOps and Product Owner*
+
 **Gabe DiCarlo** - *Integration Specialist*
+
 **AJ Morgan** - *UI Specialist*
+
 **Jack Otten** - *Integration/UI Specialist*
 
 ## Group Meetings/Communication
 The group communicates via [Discord](https://discord.com/). We utiluze the general text-channel for frequent discussion and decision-making, and we utilize the general voice-channel for our standup calls.
-
-![Discord Channels](https://cdn.discordapp.com/attachments/729148573886709846/847275069235396669/unknown.png "Discord Channels")
