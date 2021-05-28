@@ -4,7 +4,10 @@
 Bucket List is an android application for trip planning that allows the users to select interested activities and receive information about local events based on their location.
 
 ## Storyboard (Screen Mockups)
-Invision, FluidUI, Powerpoint, paint, etc... will be fine.
+
+![image](https://user-images.githubusercontent.com/64533297/120045723-a497f880-bfde-11eb-8f7f-3802b0b9015b.png)
+
+https://projects.invisionapp.com/prototype/ckp7io8bz0005de01heazlgrf/play
 
 ## Functional Requirements
 (in this format, fill in the parentheses with your own words):
