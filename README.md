@@ -22,6 +22,10 @@ Then (Expected Result)
 
 (Be very specific on Given When Thens, as they should describe test parameters. Describe a specific set of outputs for a given set of inputs. In other words, "Given that shoe polish is normally $2.89, and there is a buy one get one free offer, When the user purchases two shoe polishes, Then the final cost will be $2.89",  is much better than, "Given that the user selects an item, and the item is on sale, then the item is sold at the sale price", because it references a specific item, with specific input and output price You should have a few (2-4) requirements. The Given/When/Then syntax will form the basis of our unit tests. Consider different cases: good data, bad data, multiple sets of data, etc.
 
+Given a current set of GPS coordinates or city/state and a keyword list, 
+When user clicks button, search for matches within a 100 miles of that city/state or coordinates,
+Then display matches. Keyword list may include bucket list items or other interests.
+
 ## Class Diagram
 Show data classes (DTOs), Activities, Fragments, MVVM, etc. I use ArgoUML to model classes in a diagram.  Other tools work as well.
 
