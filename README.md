@@ -2,9 +2,7 @@
 
 ## Introduction
 
-Bucket List is an android application for trip planning that allows the users to select interested activities and receive information about local events based on their location.
-
-The group is composed of the following members:
+Bucket List is an android application for trip planning that allows the users to select interested activities and receive information about local events based on their location. The group is composed of the following members:
 
 **Tony Martin** - *DevOps and Product Owner*
 
@@ -18,7 +16,7 @@ The group is composed of the following members:
 
 ![Images of Storyboard](https://user-images.githubusercontent.com/64533297/120045723-a497f880-bfde-11eb-8f7f-3802b0b9015b.png)
 
-https://projects.invisionapp.com/prototype/ckp7io8bz0005de01heazlgrf/play
+You can access our Storyboard [here](https://projects.invisionapp.com/prototype/ckp7io8bz0005de01heazlgrf/play) at Invision.
 
 ## Functional Requirements
 
@@ -50,12 +48,14 @@ One or two lines for each class to describe  use of interfaces, JME classes, Dal
 
 Product backlog items are stories.  Stories should be features, like "Take a picture and post on Facebook", not technical, like "Make the database". Each story should be a separate Project in GitHub. The title of the project should be the name of the story. As long as you have these stories listed as Projects in GitHub, I can look at your projects to see your backlog. No need to repeat it in the design document. There should be more stories than you will finish in one sprint. The Product Owner can choose from this list, which stories to complete in each sprint.
 
-## A scrum or kanban board, using GitHub projects (preferred), Trello, Scrumy.com, or something similar, that contains:
+## Scrum Board
 
-A milestone for Sprint #1, with tasks associated.
+(A milestone for Sprint #1, with tasks associated.
 Tasked stories for Sprint #1.
 
-Sprint tasks that elaborate on the stories, with technical details. These should be technical tasks that are required to implement one of the features. You only need to task out stories for Sprint #1. You can task out stories for Sprint #2 and #3 as we get closer to those sprints. The Product Owner/Scrum Master/DevOps person on your team should select stories to play for each sprint, from the list of available stories in the Product Backlog. As long as you have the tasks in GitHub Projects, under Projects, and associated with milestones, you do not need to repeat them in the design doc. I'll look at the Project and Milestone view to see them.
+Sprint tasks that elaborate on the stories, with technical details. These should be technical tasks that are required to implement one of the features. You only need to task out stories for Sprint #1. You can task out stories for Sprint #2 and #3 as we get closer to those sprints. The Product Owner/Scrum Master/DevOps person on your team should select stories to play for each sprint, from the list of available stories in the Product Backlog. As long as you have the tasks in GitHub Projects, under Projects, and associated with milestones, you do not need to repeat them in the design doc. I'll look at the Project and Milestone view to see them.)
+
+Our [Scrum Board](https://github.com/marti5a6/Bucket-List/projects/2) can be found in the Projects tab, alongside other stories in the product backlog.
 
 ## Scrum Roles
 
@@ -69,7 +69,7 @@ Sprint tasks that elaborate on the stories, with technical details. These should
 
 ## Group Meetings/Communication
 
-The group communicates via [Discord](https://discord.com/). We utiluze the general text-channel for frequent discussion and decision-making, and we utilize the general voice-channel for our standup calls.
+The group communicates via [Discord](https://discord.com). We utiluze the general text-channel for frequent discussion and decision-making, and we utilize the general voice-channel for our standup calls.
 
 ![Image of Bucket-List Discord Server](https://i.ibb.co/w7J5xXd/image.png)
 
