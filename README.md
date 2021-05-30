@@ -4,6 +4,16 @@
 
 Bucket List is an android application for trip planning that allows the users to select interested activities and receive information about local events based on their location.
 
+The group is composed of the following members:
+
+**Tony Martin** - *DevOps and Product Owner*
+
+**Gabe DiCarlo** - *Integration Specialist*
+
+**AJ Morgan** - *UI Specialist*
+
+**Jack Otten** - *Integration/UI Specialist*
+
 ## Storyboard (Screen Mockups)
 
 ![Images of Storyboard](https://user-images.githubusercontent.com/64533297/120045723-a497f880-bfde-11eb-8f7f-3802b0b9015b.png)
@@ -47,15 +57,15 @@ Tasked stories for Sprint #1.
 
 Sprint tasks that elaborate on the stories, with technical details. These should be technical tasks that are required to implement one of the features. You only need to task out stories for Sprint #1. You can task out stories for Sprint #2 and #3 as we get closer to those sprints. The Product Owner/Scrum Master/DevOps person on your team should select stories to play for each sprint, from the list of available stories in the Product Backlog. As long as you have the tasks in GitHub Projects, under Projects, and associated with milestones, you do not need to repeat them in the design doc. I'll look at the Project and Milestone view to see them.
 
-## Scrum Roles, and who will fill those roles
+## Scrum Roles
 
-**Tony Martin** - *DevOps and Product Owner*
+**Tony Martin** - *Product Owner, Development Team*
 
-**Gabe DiCarlo** - *Integration Specialist*
+**Gabe DiCarlo** - *Scrum Master, Development Team*
 
-**AJ Morgan** - *UI Specialist*
+**AJ Morgan** - *Development Team*
 
-**Jack Otten** - *Integration/UI Specialist*
+**Jack Otten** - *Development Team*
 
 ## Group Meetings/Communication
 
