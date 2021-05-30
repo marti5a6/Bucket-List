@@ -57,6 +57,8 @@ Sprint tasks that elaborate on the stories, with technical details. These should
 
 Our [Scrum Board](https://github.com/marti5a6/Bucket-List/projects/2) can be found in the Projects tab, alongside other stories in the product backlog.
 
+Here is our Scrum Board after the last sprint: (picture).
+
 ## Scrum Roles
 
 **Tony Martin** - *Product Owner, Development Team*
