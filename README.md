@@ -44,7 +44,7 @@ Our Product Backlog, or collection of stories can be found [here](https://github
 
 Our [Scrum Board](https://github.com/marti5a6/Bucket-List/projects/2) can be found in the Projects tab, alongside other stories in the product backlog.
 
-Here is our Scrum Board after the last sprint: (picture).
+Here is our Scrum Board after the last sprint: ![Image of Scrum Board](https://i.ibb.co/fCBjmcn/image.png).
 
 ## Scrum Roles
 
