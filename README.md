@@ -36,6 +36,12 @@ Given a current set of GPS coordinates or city/state and a keyword list,
 When user clicks button, search for matches within a 100 miles of that city/state or coordinates,
 Then display matches. Keyword list may include bucket list items or other interests.
 
+Given a hiking trail's GPS coordinates, when the user clicks search, parse through database containing trail name and coordinates, then display the matches.
+
+Given a set of GPS coordiantes, location name, city/state information, and description, when the user searches for a Bucket-List location, parse through the database and find all matching keywords, then display results.
+
+Given a set of GPS coordiantes, location name, city/state information, and description results for a location, when the user clicks add, parse through the database and look for matches, then add a new entry for non existent locations.
+
 ## Class Diagram
 
 Show data classes (DTOs), Activities, Fragments, MVVM, etc. I use ArgoUML to model classes in a diagram.  Other tools work as well.
