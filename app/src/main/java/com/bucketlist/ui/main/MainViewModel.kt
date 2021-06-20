@@ -6,9 +6,12 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.bucketlist.dto.BucketListItem
 
 class MainViewModel : ViewModel() {
-    internal var bucketitems:MutableLiveData<ArrayList<BucketItem>>
-        get () {return _bucketitems}
-        set (value) {_bucketitems = value}
+    private var _bucketlistitems: MutableLiveData<ArrayList<BucketListItem>> = MutableLiveData<ArrayList<BucketListItem>>()
+
+    internal var bucketlistitems:MutableLiveData<ArrayList<BucketListItem>>
+        get () {return _bucketlistitems}
+        set (value) {_bucketlistitems = value}
 }
