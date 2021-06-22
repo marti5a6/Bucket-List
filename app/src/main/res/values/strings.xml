@@ -1,10 +1,3 @@
 <resources>
     <string name="app_name">Bucket List</string>
-    <string-array name="interests_array">
-        <item>Hiking</item>
-        <item>Haunted</item>
-        <item>Guitar</item>
-        <item>Railroad</item>
-    </string-array>
-    <string name="bucketListItems">Select Interests</string>
 </resources>
