@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
                 .commitNow()
         }
         val spinner: Spinner = findViewById(R.id.interests_spinner)
-// Create an ArrayAdapter using the string array and a default spinner layout
+        // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
             this,
             R.array.interests_array,
