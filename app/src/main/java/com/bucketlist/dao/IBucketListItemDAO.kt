@@ -11,5 +11,5 @@ interface IBucketListItemDAO {
     suspend fun getAllItems(): ArrayList<BucketListItem>
 
     @GET("")
-    fun getItems(@Query("Combined_Name") bucketListItemName:String) : Call<ArrayList<BucketListItem>>
+    fun getItems(@Query("Combined_Name") bucketListItemName: String) : Call<ArrayList<BucketListItem>>
 }
