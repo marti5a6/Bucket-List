@@ -7,4 +7,5 @@
         <item>Railroad</item>
     </string-array>
     <string name="bucketListItems">Select Interests</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiYWptb3JncyIsImEiOiJja3EwM3l4cXYwMTVpMm5wbHF0aHc5ZGg2In0.XK8QVVqEeT08mttuJJAmvA</string>
 </resources>
