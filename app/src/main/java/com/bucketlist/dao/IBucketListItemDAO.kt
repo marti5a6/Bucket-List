@@ -7,6 +7,7 @@ import retrofit2.http.Query
 
 interface IBucketListItemDAO {
     // hard code items?
+
     @GET("")
     suspend fun getAllItems(): ArrayList<BucketListItem>
 

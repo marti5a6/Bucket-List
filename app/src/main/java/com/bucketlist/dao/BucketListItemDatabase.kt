@@ -8,3 +8,4 @@ import com.bucketlist.dto.BucketListItem
 abstract class BucketListItemDatabase : RoomDatabase() {
     abstract fun localBucketListItemDAO() : ILocalBucketListItemDAO
 }
+//may need to expand
