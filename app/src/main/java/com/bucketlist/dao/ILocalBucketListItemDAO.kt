@@ -18,3 +18,4 @@ interface ILocalBucketListItemDAO {
     @Insert
     fun save(bucketlistitem: BucketListItem)
 }
+//add queries based on input?
