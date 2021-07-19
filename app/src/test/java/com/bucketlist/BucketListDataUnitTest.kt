@@ -11,6 +11,8 @@ import org.junit.rules.TestRule
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
+ * Need to add logic for tests to pass, especially fetchBucketListItemFunction!!
+ *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class BucketListDataUnitTest {
@@ -106,5 +108,21 @@ class BucketListDataUnitTest {
             }
         }
         assertTrue(BarsAndHikingFound)
+    }*/
+   /* @Test
+    fun searchForGarbage_returnsNothing(){
+        givenAFeedOfBucketListDataAreAvailable()
+        //whenISearchForGarbage()
+        thenIGetZeroResults()
+    }
+
+    /*private fun whenISearchForGarbage() {
+        mvm.fetchBucketListItem("ksdajhf")
+    }*/
+
+    private fun thenIGetZeroResults() {
+        mvm.bucketlistitems.observeForever {
+            assertEquals(0, it.size)
+        }
     }*/
 }
