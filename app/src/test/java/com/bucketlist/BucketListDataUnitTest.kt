@@ -60,10 +60,10 @@ class BucketListDataUnitTest {
     //Checking to make sure a GPS coordinate search returns something, once we have data
     //We can change it to search for specific coordinate & result
     /*@Test
-   fun searchForHikingAndGPSCoordinates_returnsATrailName(){
+   fun searchForHikingAndGPSCoordinates_returnsGreaterThan0(){
        givenAFeedOfBucketListDataAreAvailable()
-       // whenSearchForHikingInCincinnati()
-       thenResultContainsMtAiry()
+       // whenSearchForHikingAndGPSCoordinates()
+       thenResultIsGreaterThan0()
    }*/
 
 
@@ -80,4 +80,31 @@ class BucketListDataUnitTest {
          }
          assertTrue(resultIsGreaterThan0)
      }*/
+
+    //Checking to make sure a generic search brings up results
+    /*@Test
+   fun searchForCincinnati_returnsListContainingBarsAndHiking(){
+       givenAFeedOfBucketListDataAreAvailable()
+       // whenSearchForCincinnati()
+       thenResultContainsBarsAndHiking()
+   }*/
+
+
+    /* private fun whenSearchForCincinnati() {
+         mvm.fetchBucketListItem("Cincinnati", "*")
+     }
+
+     private fun thenResultContainsBarsAndHiking() {
+        var BarsAndHikingFound = false;
+        mvm.bucketlistitems.observeForever{
+            assertNotNull(it)
+            assertTrue(it.size > 0)
+            it.forEach{
+                if (it.category.contains("Bars") && it.category.contains("Hiking")){
+                    BarsAndHikingFound = true;
+                }
+            }
+        }
+        assertTrue(BarsAndHikingFound)
+    }*/
 }
