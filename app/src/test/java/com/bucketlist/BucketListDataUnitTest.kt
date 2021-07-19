@@ -57,5 +57,27 @@ class BucketListDataUnitTest {
         assertTrue(mtAiryFound)
     }*/
 
+    //Checking to make sure a GPS coordinate search returns something, once we have data
+    //We can change it to search for specific coordinate & result
+    /*@Test
+   fun searchForHikingAndGPSCoordinates_returnsATrailName(){
+       givenAFeedOfBucketListDataAreAvailable()
+       // whenSearchForHikingInCincinnati()
+       thenResultContainsMtAiry()
+   }*/
 
+
+    /* private fun whenSearchForHikingAndGPSCoordinates() {
+         mvm.fetchBucketListItem("GPSCoordinates", "Hiking")
+     }
+
+     private fun thenResultIsGreaterThan0() {
+         var resultIsGreaterThan0 = false;
+         mvm.bucketlistitems.observeForever{
+             assertNotNull(it)
+             if (it.size > 0){
+             resultIsGreaterThan0 = true;
+         }
+         assertTrue(resultIsGreaterThan0)
+     }*/
 }
