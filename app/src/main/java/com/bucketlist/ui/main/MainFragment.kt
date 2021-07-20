@@ -10,10 +10,6 @@ import com.bucketlist.R
 
 class MainFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = MainFragment()
-    }
-
     private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(
@@ -29,6 +25,8 @@ class MainFragment : Fragment() {
         // TODO: Use the ViewModel
     }
 
-
+    companion object {
+        fun newInstance() = MainFragment()
+    }
 
 }
