@@ -10,11 +10,11 @@ interface ILocalBucketListItemDAO {
     fun getAll()  : LiveData<List<BucketListItem>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(bucketlistitems: BucketListItem)
+    fun insertAll(bucketListItems: BucketListItem)
 
     @Delete
-    fun delete(bucketlistitem: BucketListItem)
+    fun delete(bucketListItem: BucketListItem)
 
     @Insert
-    fun save(bucketlistitem: BucketListItem)
+    fun save(bucketListItem: BucketListItem)
 }
