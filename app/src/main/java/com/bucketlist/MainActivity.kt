@@ -1,8 +1,10 @@
 package com.bucketlist
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Spinner
 import com.bucketlist.ui.main.MainFragment
 
@@ -28,5 +30,12 @@ class MainActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             spinner.adapter = adapter
         }
+        val searchButton = findViewById<Button>(R.id.search_button)
+        searchButton.setOnClickListener {
+            // Handler code here.
+            val intent = Intent(this, PlacesActivity::class.java)
+            startActivity(intent);
+        }
     }
+
 }
