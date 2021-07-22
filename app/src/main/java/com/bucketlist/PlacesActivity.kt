@@ -15,24 +15,25 @@ class PlacesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_places)
         // wire up our recycler view.
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerview)
-val placeFrag : PlaceFragment = PlaceFragment()
-        placesAdapter = placeFrag.PlaceInfoAdapter(placesList, R.layout.rowlayout)
+        preparePlacesData()
 
+val placeFrag : PlaceFragment = PlaceFragment()
+     //   placesAdapter = placeFrag.PlaceInfoAdapter(placesList, R.layout.rowlayout)
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerview)
         val layoutManager = LinearLayoutManager(applicationContext)
         recyclerView.layoutManager = layoutManager
         recyclerView.itemAnimator = DefaultItemAnimator()
-        recyclerView.adapter = placesAdapter
+        recyclerView.adapter = placeFrag.PlaceInfoAdapter(placesList, R.layout.rowlayout)
     }
     private fun preparePlacesData() {
-        var types: ArrayList<String> = ArrayList<String>()
-        types.add("point of interest")
+       // var types: ArrayList<String> = ArrayList<String>()
+      //  types.add("point of interest")
 
-        var place = PlaceInfo("Mad Max: Fury Road", "Action & Adventure", types)
+        var place = PlaceInfo("Mad Max: Fury Road", "Action & Adventure")
         placesList.add(place)
-        place = PlaceInfo("Inside Out", "Animation, Kids & Family", types)
+        place = PlaceInfo("Inside Out", "Animation, Kids & Family")
         placesList.add(place)
-        place = PlaceInfo("Star Wars: Episode VII - The Force Awakens", "Action", types)
+        place = PlaceInfo("Star Wars: Episode VII - The Force Awakens", "Action")
         placesList.add(place)
 
     }

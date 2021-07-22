@@ -113,7 +113,8 @@ class PlaceFragment : Fragment() {
         private var lblCoordinates: TextView = itemView.findViewById(R.id.lblCoordinates)
 
         fun updatePlaceInfo( placeInfo: PlaceInfo){
-            placeInfo.toString()
+            placeInfo.getPlaceName()
+            placeInfo.getPlaceCoordinates()
         }
 
     }
