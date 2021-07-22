@@ -7,7 +7,8 @@ data class PlaceInfo(var name: String = "", var formatted_address: String = "", 
         return "$name"
     }
     fun getPlaceCoordinates(): String{
-        return "$latitude $longitude"
+       // return "$latitude $longitude"
+        return "$formatted_address"
     }
     override fun toString(): String {
         return "$name $formatted_address $latitude $longitude"
