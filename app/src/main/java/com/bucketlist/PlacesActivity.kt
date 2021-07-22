@@ -14,8 +14,9 @@ class PlacesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_places)
-        // wire up our recycler view.
         preparePlacesData()
+
+        // wire up our recycler view.
 
 val placeFrag : PlaceFragment = PlaceFragment()
      //   placesAdapter = placeFrag.PlaceInfoAdapter(placesList, R.layout.rowlayout)
