@@ -25,6 +25,7 @@ val placeFrag : PlaceFragment = PlaceFragment()
         recyclerView.layoutManager = layoutManager
         recyclerView.itemAnimator = DefaultItemAnimator()
         recyclerView.adapter = placeFrag.PlaceInfoAdapter(placesList, R.layout.rowlayout)
+
     }
     private fun preparePlacesData() {
        // var types: ArrayList<String> = ArrayList<String>()
