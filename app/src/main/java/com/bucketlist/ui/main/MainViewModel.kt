@@ -11,7 +11,7 @@ import com.bucketlist.dto.BucketListItem
 class MainViewModel : ViewModel() {
     private var _bucketListItems: MutableLiveData<ArrayList<BucketListItem>> = MutableLiveData<ArrayList<BucketListItem>>()
 
-    internal var bucketlistitems:MutableLiveData<ArrayList<BucketListItem>>
+    internal var bucketListItems:MutableLiveData<ArrayList<BucketListItem>>
         get () {return _bucketListItems}
         set (value) {_bucketListItems = value}
 }
