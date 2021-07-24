@@ -7,13 +7,13 @@
     tools:context=".MainActivity" >
 
     <Spinner
-        android:id="@+id/interests_spinner"
+        android:id="@+id/spnInterests"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="60dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtSelectInterest"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="10dp"
@@ -22,7 +22,7 @@
         android:typeface="normal" />
 
     <Button
-        android:id="@+id/search_button"
+        android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"

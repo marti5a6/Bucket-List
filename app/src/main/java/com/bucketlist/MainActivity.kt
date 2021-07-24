@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.container, MainFragment.newInstance(),)
                 .commitNow()
         }
-        val spinner: Spinner = findViewById(R.id.interests_spinner)
+        val spinner: Spinner = findViewById(R.id.spnInterests)
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
             this,
