@@ -16,7 +16,7 @@ class PlacesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_places)
         preparePlacesData()
 
-        // wire up our recycler view.
+        // wire up recycler view.
 
 val placeFrag : PlaceFragment = PlaceFragment()
      //   placesAdapter = placeFrag.PlaceInfoAdapter(placesList, R.layout.rowlayout)
@@ -27,6 +27,10 @@ val placeFrag : PlaceFragment = PlaceFragment()
         recyclerView.adapter = placeFrag.PlaceInfoAdapter(placesList, R.layout.rowlayout)
 
     }
+    /*
+    build temporary array of data for recyclerview until pulling from google and local db
+    is finished
+    * */
     private fun preparePlacesData() {
        // var types: ArrayList<String> = ArrayList<String>()
       //  types.add("point of interest")

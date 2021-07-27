@@ -18,7 +18,8 @@ class PlaceService(application: Application) {
     internal suspend fun fetchPlaces(name: String) {
         withContext(Dispatchers.IO) {
             val service = RetrofitClientInstance.retrofitInstance?.create(IPlaceDAO::class.java)
-            val places = async {service?.getPlaces()}
+            val apikey: String = System.getenv("gapi_k") ?: "default_value"
+            val places = async {service?.getPlaces(apikey)}
 
             coroutineScope {
                 launch{
