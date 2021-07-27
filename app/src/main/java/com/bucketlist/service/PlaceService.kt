@@ -8,10 +8,9 @@ import com.bucketlist.dao.IPlaceDAO
 import com.bucketlist.dao.PlacesDatabase
 import com.bucketlist.dto.PlaceInfo
 import com.bucketlist.ui.main.RetrofitClientInstance
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
-import kotlinx.coroutines.withContext
 import android.content.ContentValues.TAG
+import kotlinx.coroutines.*
+import retrofit2.Call
 
 class PlaceService(application: Application) {
     private val application = application
@@ -21,16 +20,19 @@ class PlaceService(application: Application) {
             val service = RetrofitClientInstance.retrofitInstance?.create(IPlaceDAO::class.java)
             val places = async {service?.getPlaces()}
 
-          //  updateLocalPlaces(places.await())
-
+            coroutineScope {
+                launch{
+                    updateLocalPlaces(places.await())
+                }
+            }
         }
     }
 
     /**
      * Store these places locally, so that we can use the data without network latency
      */
-    private suspend fun updateLocalPlaces(places: ArrayList<PlaceInfo>?) {
-       var sizeOfPlaces = places?.size
+    private suspend fun updateLocalPlaces(places: Call<ArrayList<PlaceInfo>>?) {
+     //  var sizeOfPlaces = places?.size
         try {
             var localPlaceDAO = getLocalPlaceDAO()
             localPlaceDAO.insertAll(places!!)
@@ -41,7 +43,7 @@ class PlaceService(application: Application) {
     }
 
     internal fun getLocalPlaceDAO(): ILocalPlaceDAO {
-        val db = Room.databaseBuilder(application, PlacesDatabase::class.java, "mydiary").build()
+        val db = Room.databaseBuilder(application, PlacesDatabase::class.java, "myPlaces").build()
         return db.localPlantDAO()
     }
 

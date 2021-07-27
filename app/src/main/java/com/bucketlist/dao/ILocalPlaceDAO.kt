@@ -4,13 +4,14 @@ import androidx.lifecycle.LiveData
 import androidx.room.OnConflictStrategy
 import com.bucketlist.dto.PlaceInfo
 import androidx.room.*
+import retrofit2.Call
 
 interface ILocalPlaceDAO {
-    @Query("SELECT * FROM places")
-    fun getAllPlants()  : LiveData<List<PlaceInfo>>
+//    @Query("SELECT * FROM places")
+//    fun suspend getAllPlaces()  : ArrayList<PlaceInfo>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(plants: ArrayList<PlaceInfo>)
+    fun insertAll(plants: Call<ArrayList<PlaceInfo>>)
 
     @Delete
     fun delete(plant: PlaceInfo)
