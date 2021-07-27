@@ -1,5 +1,6 @@
 package com.bucketlist.ui.main
 
+import android.app.Application
 import android.content.ContentValues.TAG
 import android.net.Uri
 import android.util.Log
@@ -20,11 +21,14 @@ var _placeService : PlaceService = PlaceService(application = Application())
         get () {return _bucketlistitems}
         set (value) {_bucketlistitems = value}
 
+    /*
+    use coroutine to fetch places data to be used for storing locally
+    * */
     fun getPlaces(name: String){
         viewModelScope.launch {
             _placeService.fetchPlaces(name)
         }
     }
-        get () {return _bucketListItems}
-        set (value) {_bucketListItems = value}
+       // get () {return _bucketListItems}
+       // set (value) {_bucketListItems = value}
 }
