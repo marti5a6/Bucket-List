@@ -1,6 +1,5 @@
 package com.bucketlist.ui.main
 
-import android.app.Application
 import android.content.ContentValues.TAG
 import android.net.Uri
 import android.util.Log
@@ -15,6 +14,8 @@ import kotlinx.coroutines.launch
 class MainViewModel : ViewModel() {
     private var _bucketlistitems: MutableLiveData<ArrayList<BucketListItem>> = MutableLiveData<ArrayList<BucketListItem>>()
 var _placeService : PlaceService = PlaceService(application = Application())
+    private var _bucketListItems: MutableLiveData<ArrayList<BucketListItem>> = MutableLiveData<ArrayList<BucketListItem>>()
+
     internal var bucketlistitems:MutableLiveData<ArrayList<BucketListItem>>
         get () {return _bucketlistitems}
         set (value) {_bucketlistitems = value}
@@ -24,4 +25,6 @@ var _placeService : PlaceService = PlaceService(application = Application())
             _placeService.fetchPlaces(name)
         }
     }
+        get () {return _bucketListItems}
+        set (value) {_bucketListItems = value}
 }
