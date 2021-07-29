@@ -6,5 +6,5 @@ import com.bucketlist.dto.PlaceInfo
 
 @Database(entities=arrayOf(PlaceInfo::class), version = 1)
 abstract class PlacesDatabase : RoomDatabase() {
-    abstract fun localPlantDAO() : ILocalPlaceDAO
+    abstract fun localPlaceDAO() : ILocalPlaceDAO
 }

@@ -45,7 +45,7 @@ class PlaceService(application: Application) {
 
     internal fun getLocalPlaceDAO(): ILocalPlaceDAO {
         val db = Room.databaseBuilder(application, PlacesDatabase::class.java, "myPlaces").build()
-        return db.localPlantDAO()
+        return db.localPlaceDAO()
     }
 
     internal fun save(place:PlaceInfo) {
