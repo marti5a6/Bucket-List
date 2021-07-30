@@ -36,6 +36,13 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, PlacesActivity::class.java)
             startActivity(intent);
         }
+        val locationButton = findViewById<Button>(R.id.location_button)
+        locationButton.setOnClickListener {
+            // Handler code here.
+
+
+        }
+
     }
 
 }
