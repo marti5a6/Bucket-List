@@ -6,16 +6,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.RecyclerView
 import com.bucketlist.R
+import com.bucketlist.dto.BucketListItem
 
 class MainFragment : Fragment() {
 
 private val LOCATION_PERMISSION_REQUEST_CODE=2000
+    private val NOTIFICATION_PERMISSION_CODE = 123
 
     private lateinit var viewModel: MainViewModel
     private lateinit var locationViewModel: LocationViewModel
@@ -37,6 +43,12 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
     companion object {
         fun newInstance() = MainFragment()
     }
+    //private fun requestNotificationPermission(){
+        //if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_NOTIFICATION_POLICY) == PackageManager.PERMISSION_GRANTED)
+            //return
+        //if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_NOTIFICATION_POLICY))
+    //}
+
 
     fun prepRequestLocationUpdates(){
         if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED){
@@ -49,7 +61,7 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
 
     private fun requestLocationUpdates() {
         locationViewModel = ViewModelProviders.of(this).get(LocationViewModel::class.java)
-        locationViewModel.getLocationLiveData().observe(this, Observer {
+        locationViewModel.getLocationLiveData().observe(viewLifecycleOwner, Observer {
             it.latitude
             it.longitude
         })
@@ -73,6 +85,17 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults)
             }
         }
+
     }
 
+
+    //inner class EventsAdapter (val events List <BucketListItem>, val itemLayout: Int)
+//inner class EventViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
+    //private var imgEventThumbnail : ImageView = itemView.findViewById(R.id.imageEventThumbnail)
+    //private var lblEventInfo: TextView = itemView.findViewById(R.id.lblEventInfo)
+
+   // fun updatePlace (event: BucketListItem){
+      //  lblEventInfo.text = event.toString()
+   // }
+//}
 }
