@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -30,8 +31,8 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
     private lateinit var locationViewModel: LocationViewModel
     private lateinit var applicationViewModel: ApplicationViewModel
 
-    //var latitude: String=""
-    //var longitude: String=""
+    var latitude: String="39.1031"
+    var longitude: String="84.5120"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,10 +46,6 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         applicationViewModel = ViewModelProviders.of(this).get(ApplicationViewModel::class.java)
-
-//        applicationViewModel.placeService.getLocalPlaceDAO().fetchPlaces().observe(this, Observer {
-//
- //      })
 
         prepRequestLocationUpdates()
 
@@ -74,7 +71,10 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         locationViewModel.getLocationLiveData().observe(viewLifecycleOwner, Observer {
             it.latitude
             it.longitude
+            latitude=it.latitude
+            longitude=it.longitude
         })
+
         /*Could not resolve error with getLocationLiveData
         so hardcoding cincinnati for now
         * */

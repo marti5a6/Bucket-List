@@ -7,11 +7,14 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.bucketlist.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
-   // var frag: MainFragment = MainFragment.newInstance()
+    var mainFragment: MainFragment = MainFragment.newInstance()
+
+    var locationString = "39.1031,84.5120"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
@@ -36,8 +39,8 @@ class MainActivity : AppCompatActivity() {
         searchButton.setOnClickListener {
             // Handler code here.
             val intent = Intent(this, PlacesActivity::class.java)
-
-            intent.putExtra("locationstring", "39.1031,84.5120" );
+            locationString=mainFragment.latitude + "," + mainFragment.longitude
+            intent.putExtra("locationString", locationString );
             startActivity(intent);
         }
 

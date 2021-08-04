@@ -14,6 +14,7 @@ class PlacesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_places)
+      //  Bundle extras = getIntent().getExtras().getString("locationString")
         preparePlacesData()
 
         // wire up recycler view.
