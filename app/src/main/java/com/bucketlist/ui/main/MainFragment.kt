@@ -76,6 +76,9 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         }
     }
 
+
+
+
     private fun requestLocationUpdates() {
 
         /*Could not resolve error with getLocationLiveData

@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import com.bucketlist.ui.main.BucketListMapFragment
 import com.bucketlist.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
@@ -45,8 +46,13 @@ class MainActivity : AppCompatActivity() {
        btnMap.setOnClickListener{
            val intent = Intent(this, MapsActivity::class.java)
            startActivity(intent)
-       }
 
+       }
+     fun onOpenMap() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container, BucketListMapFragment())
+            .commitNow()
+    }
 
 
     }
