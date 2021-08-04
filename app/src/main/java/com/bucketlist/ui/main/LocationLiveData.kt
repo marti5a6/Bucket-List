@@ -23,7 +23,7 @@ class LocationLiveData(context : Context): LiveData<LocationDetails>() {
 
         fusedLocationClient.lastLocation.addOnSuccessListener {
 
-            location: Location -> location?.also{
+            location: Location -> location.also{
 
              setLocationData(it)
         }
@@ -37,21 +37,22 @@ class LocationLiveData(context : Context): LiveData<LocationDetails>() {
         fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, null)
     }
 
-    private val locationCallback = object: LocationCallback() {
+    private val locationCallback = object : LocationCallback() {
        override fun onLocationResult(locationResult: LocationResult?){
             super.onLocationResult(locationResult)
+
             locationResult ?: return
             for(location in locationResult.locations){
-               if(location!=null){
-                   setLocationData(location)
-               }
-
+               //if(location!=null){
+               //    setLocationData(location)
+               //}
+                setLocationData(location)
             }
        }
     }
 
-    private fun setLocationData(location: Location?) {
-        value = LocationDetails(location?.latitude.toString(),location?.longitude.toString())
+    private fun setLocationData(location: Location) {
+        value = LocationDetails(location.longitude.toString(),location.latitude.toString())
     }
 
     companion object{

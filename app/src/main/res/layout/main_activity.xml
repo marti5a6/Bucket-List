@@ -4,7 +4,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <Spinner
         android:id="@+id/interests_spinner"
@@ -28,7 +28,6 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="120dp"
         android:text="@android:string/search_go" />
-
 
 
 </FrameLayout>
