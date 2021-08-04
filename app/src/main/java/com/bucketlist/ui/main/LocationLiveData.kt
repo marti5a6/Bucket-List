@@ -17,6 +17,7 @@ class LocationLiveData(context : Context): LiveData<LocationDetails>() {
         fusedLocationClient.removeLocationUpdates(locationCallback)
     }
 //    @SuppressLint("MissingPermission")
+    @SuppressLint("MissingPermission")
     override fun onActive(){
         super.onActive()
 
@@ -31,6 +32,7 @@ class LocationLiveData(context : Context): LiveData<LocationDetails>() {
     }
 
   //  @SuppressLint("MissingPermission")
+    @SuppressLint("MissingPermission")
     private fun startLocationUpdates(){
         fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, null)
     }

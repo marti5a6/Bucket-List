@@ -70,12 +70,12 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         /*Could not resolve error with getLocationLiveData
         so hardcoding cincinnati for now
         * */
-        latitude="39.1031"
-        longitude="84.5120"
-//        applicationViewModel.getLocationLiveData().observe(viewLifecycleOwner, Observer {
-//            latitude= it.latitude
-//            longitude=  it.longitude
-//        })
+        //latitude="39.1031"
+        //longitude="84.5120"
+        applicationViewModel.getLocationLiveData().observe(viewLifecycleOwner, Observer {
+            latitude= it.latitude
+            longitude=  it.longitude
+        })
     }
 
     override fun onRequestPermissionsResult(
