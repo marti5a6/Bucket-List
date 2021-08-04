@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             spinner.adapter = adapter
         }
+
         val searchButton = findViewById<Button>(R.id.search_button)
         searchButton.setOnClickListener {
             // Handler code here.
@@ -40,6 +41,12 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("locationstring", "39.1031,84.5120" );
             startActivity(intent);
         }
+       val btnMap =  findViewById<Button>(R.id.btnMap)
+       btnMap.setOnClickListener{
+           val intent = Intent(this, MapsActivity::class.java)
+           startActivity(intent)
+       }
+
 
 
     }

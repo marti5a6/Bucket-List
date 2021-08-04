@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -30,6 +31,7 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
     var latitude: String=""
     var longitude: String=""
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -42,6 +44,7 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         applicationViewModel = ViewModelProviders.of(this).get(ApplicationViewModel::class.java)
+
 
 //        applicationViewModel.placeService.getLocalPlaceDAO().fetchPlaces().observe(this, Observer {
 //
@@ -56,6 +59,14 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         fun newInstance() = MainFragment()
     }
 
+   // fun prepRequestLocationUpdates(){
+     //   if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED){
+       //     requestLocationUpdates()
+        //}else{
+          //  val permissionRequest = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
+            //requestPermissions(permissionRequest,LOCATION_PERMISSION_REQUEST_CODE)
+        //}
+    //}
     fun prepRequestLocationUpdates(){
         if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED){
             requestLocationUpdates()
