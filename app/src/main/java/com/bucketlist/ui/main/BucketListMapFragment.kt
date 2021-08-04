@@ -40,11 +40,12 @@ private var mapReady = false
     ): View? {
         // Inflate the layout for this fragment
         var rootView = return inflater.inflate(R.layout.fragment_bucket_list_map, container, false)
-        childFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment
-        mapFragment.getMapAsync {
-            googleMap -> mMap = googleMap
-            updateMap()
-        }
+
+        //childFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment
+        //mapFragment.getMapAsync {
+          //  googleMap -> mMap = googleMap
+            //updateMap()
+        //}
         return rootView
     }
 

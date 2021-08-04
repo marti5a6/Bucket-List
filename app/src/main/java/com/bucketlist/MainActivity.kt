@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             // Handler code here.
             val intent = Intent(this, PlacesActivity::class.java)
 
-            intent.putExtra("locationstring", "39.1031,84.5120" );
+            intent.putExtra("locationString", "39.1031,84.5120" );
             startActivity(intent);
         }
        val btnMap =  findViewById<Button>(R.id.btnMap)

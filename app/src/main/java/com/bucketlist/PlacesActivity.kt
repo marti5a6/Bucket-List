@@ -20,6 +20,7 @@ class PlacesActivity : AppCompatActivity() {
 
 val placeFrag : PlaceFragment = PlaceFragment()
      //   placesAdapter = placeFrag.PlaceInfoAdapter(placesList, R.layout.rowlayout)
+        preparePlacesData()
         val recyclerView: RecyclerView = findViewById(R.id.recyclerview)
         val layoutManager = LinearLayoutManager(applicationContext)
         recyclerView.layoutManager = layoutManager

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <Spinner
         android:id="@+id/interests_spinner"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp" />
+        android:layout_marginTop="60dp"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView"
@@ -27,16 +29,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="120dp"
-        android:text="@android:string/search_go" />
+        android:text="@android:string/search_go"
+        app:strokeColor="#15D5D5" />
+
     <Button
         android:id="@+id/btnMap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Map"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginLeft="300dp"
+        android:text="@string/title_activity_maps"
         tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="40dp"
-        />
-
+        tools:layout_editor_absoluteY="40dp" />
 
 
 </FrameLayout>
