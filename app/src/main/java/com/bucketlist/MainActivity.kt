@@ -6,19 +6,16 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
-import androidx.fragment.app.Fragment
-import com.bucketlist.ui.main.BucketListMapFragment
 import com.bucketlist.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
-   // var frag: MainFragment = MainFragment.newInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
+                .replace(R.id.container, MainFragment.newInstance(),)
                 .commitNow()
         }
         val spinner: Spinner = findViewById(R.id.interests_spinner)
@@ -33,27 +30,18 @@ class MainActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             spinner.adapter = adapter
         }
-
         val searchButton = findViewById<Button>(R.id.search_button)
         searchButton.setOnClickListener {
             // Handler code here.
             val intent = Intent(this, PlacesActivity::class.java)
-
-            intent.putExtra("locationString", "39.1031,84.5120" );
             startActivity(intent);
         }
-       val btnMap =  findViewById<Button>(R.id.btnMap)
-       btnMap.setOnClickListener{
-           val intent = Intent(this, MapsActivity::class.java)
-           startActivity(intent)
+        val locationButton = findViewById<Button>(R.id.btnMap)
+        locationButton.setOnClickListener {
+            // Handler code here.
 
-       }
-     fun onOpenMap() {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container, BucketListMapFragment())
-            .commitNow()
-    }
 
+        }
 
     }
 
