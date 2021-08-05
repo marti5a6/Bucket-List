@@ -34,11 +34,13 @@ class MainActivity : AppCompatActivity() {
         searchButton.setOnClickListener {
             // Handler code here.
             val intent = Intent(this, PlacesActivity::class.java)
-            startActivity(intent);
+            startActivity(intent)
         }
         val locationButton = findViewById<Button>(R.id.btnMap)
         locationButton.setOnClickListener {
             // Handler code here.
+            val intent = Intent(this, MapsActivity::class.java)
+            startActivity(intent)
 
 
         }
