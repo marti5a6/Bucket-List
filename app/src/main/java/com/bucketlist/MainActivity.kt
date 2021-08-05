@@ -7,12 +7,15 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bucketlist.ui.main.BucketListMapFragment
 import com.bucketlist.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
-   // var frag: MainFragment = MainFragment.newInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
@@ -36,11 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         val searchButton = findViewById<Button>(R.id.search_button)
         searchButton.setOnClickListener {
-            // Handler code here.
-            val intent = Intent(this, PlacesActivity::class.java)
 
-            intent.putExtra("locationString", "39.1031,84.5120" );
-            startActivity(intent);
         }
        val btnMap =  findViewById<Button>(R.id.btnMap)
        btnMap.setOnClickListener{
@@ -52,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, BucketListMapFragment())
             .commitNow()
-    }
+     }
 
 
     }
