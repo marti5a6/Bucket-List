@@ -8,7 +8,7 @@ import com.bucketlist.dto.LocationDetails
 import com.google.android.gms.location.*
 
 class LocationLiveData(context : Context): LiveData<LocationDetails>() {
-
+//get permissions
     //private var fusedLocationClient: FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(context)
     private var fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
 

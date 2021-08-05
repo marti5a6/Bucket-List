@@ -16,6 +16,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,13 +39,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+    val mark = LatLng(39.1031, -84.5120)
+    val mark2 = LatLng(39.1031, -83.5120)
+    val mark3 = LatLng(39.1031, -82.5120)
+    val mlocationArray = mutableListOf<LatLng>(mark, mark2, mark3)
+
+    //val mark = LatLng(39.1031, -84.5120)
+
+
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
         // Add a marker in Cincinnati and move the camera
-        val marker = LatLng(39.1031, -84.5120)
-
-        mMap.addMarker(MarkerOptions().position(marker).title("Marker in Cincinnati"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(marker))
+        for (i in mlocationArray)
+        mMap.addMarker(MarkerOptions().position(i).title("Marker in Cincinnati"))
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(18.0f))
+        for (i in mlocationArray)
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(i))
     }
 }
