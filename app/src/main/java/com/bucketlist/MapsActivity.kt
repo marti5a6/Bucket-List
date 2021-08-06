@@ -39,6 +39,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
     val mark = LatLng(39.1031, -84.5120)
     val mark2 = LatLng(39.1031, -83.5120)
     val mark3 = LatLng(39.1031, -82.5120)
