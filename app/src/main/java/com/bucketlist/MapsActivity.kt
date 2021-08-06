@@ -1,7 +1,13 @@
 package com.bucketlist
 
+import android.Manifest
+import android.annotation.SuppressLint
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -15,6 +21,33 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
+    private val LOCATION_CODE = 1
+
+    fun getLocationAccess(){
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)== PackageManager.PERMISSION_GRANTED){
+            mMap.isMyLocationEnabled = true
+        }else{
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_CODE)
+        }
+    }
+    @SuppressLint("MissingPermission")
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if(requestCode == LOCATION_CODE) {
+
+                if (grantResults.contains(PackageManager.PERMISSION_GRANTED)) {
+                    mMap.isMyLocationEnabled = true
+
+                } else {
+                    Toast.makeText(this, "Unable to update location without permission", Toast.LENGTH_LONG).show()
+                }
+            }
+
+        }
 
 
 
@@ -49,6 +82,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+        getLocationAccess()
 
         // Add a marker in Cincinnati and move the camera
         for (i in mlocationArray)
