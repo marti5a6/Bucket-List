@@ -53,7 +53,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // Add a marker in Cincinnati and move the camera
         for (i in mlocationArray)
         mMap.addMarker(MarkerOptions().position(i).title("Marker in Cincinnati"))
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(18.0f))
+        for (i in mlocationArray)
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(6.0f))
         for (i in mlocationArray)
         mMap.moveCamera(CameraUpdateFactory.newLatLng(i))
     }

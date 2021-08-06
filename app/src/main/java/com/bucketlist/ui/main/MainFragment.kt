@@ -35,10 +35,14 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
     private lateinit var binding: MainActivityBinding
     private var _places = ArrayList<PlaceInfo>()
 
+    private var latitude=""
+    private var longitude=""
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,): View {
+
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
@@ -53,6 +57,10 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         applicationViewModel = ViewModelProviders.of(this).get(ApplicationViewModel::class.java)
 
+        val searchButton = binding.root.findViewById<Button>(R.id.search_button)
+        searchButton.setOnClickListener {
+            viewModel.getPlaces("$latitude,$longitude")
+        }
 
 //        applicationViewModel.placeService.getLocalPlaceDAO().fetchPlaces().observe(this, Observer {
 //
@@ -102,8 +110,11 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         //longitude="84.5120"
         applicationViewModel.getLocationLiveData().observe(viewLifecycleOwner, Observer {
            it.latitude
-         it.longitude
+           it.longitude
+            latitude=it.latitude
+            longitude=it.longitude
         })
+
     }
 
     override fun onRequestPermissionsResult(
