@@ -2,6 +2,7 @@ package com.bucketlist
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,17 +21,21 @@ class PlacesActivity : AppCompatActivity() {
 
 val placeFrag : PlaceFragment = PlaceFragment()
      //   placesAdapter = placeFrag.PlaceInfoAdapter(placesList, R.layout.rowlayout)
+        preparePlacesData()
         val recyclerView: RecyclerView = findViewById(R.id.recyclerview)
         val layoutManager = LinearLayoutManager(applicationContext)
         recyclerView.layoutManager = layoutManager
         recyclerView.itemAnimator = DefaultItemAnimator()
         recyclerView.adapter = placeFrag.PlaceInfoAdapter(placesList, R.layout.rowlayout)
 
+
+
     }
     /*
     build temporary array of data for recyclerview until pulling from google and local db
     is finished
     * */
+
     private fun preparePlacesData() {
        // var types: ArrayList<String> = ArrayList<String>()
       //  types.add("point of interest")

@@ -10,6 +10,12 @@ data class PlaceInfo(var name: String = "", var formatted_address: String = "", 
        // return "$latitude $longitude"
         return "$formatted_address"
     }
+    fun getLong(): String{
+        return "$longitude"
+    }
+    fun getLat(): String{
+        return "$latitude"
+    }
     override fun toString(): String {
         return "$name $formatted_address $latitude $longitude"
     }

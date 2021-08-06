@@ -21,6 +21,8 @@ import com.bucketlist.dto.PlaceInfo
  * Use the [PlaceFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+
 class PlaceFragment : Fragment() {
     // TODO: Rename and change types of parameters
    // private var param1: String? = null
@@ -111,6 +113,7 @@ class PlaceFragment : Fragment() {
     inner class PlaceViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         private var lblName : TextView = itemView.findViewById(R.id.lblName)
         private var lblCoordinates: TextView = itemView.findViewById(R.id.lblCoordinates)
+
 
         fun updatePlaceInfo( placeInfo: PlaceInfo){
             placeInfo.getPlaceName()

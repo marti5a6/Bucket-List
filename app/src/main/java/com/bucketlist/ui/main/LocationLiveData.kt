@@ -8,7 +8,7 @@ import com.bucketlist.dto.LocationDetails
 import com.google.android.gms.location.*
 
 class LocationLiveData(context : Context): LiveData<LocationDetails>() {
-
+//get permissions
     //private var fusedLocationClient: FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(context)
     private var fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
 
@@ -16,7 +16,6 @@ class LocationLiveData(context : Context): LiveData<LocationDetails>() {
         super.onInactive()
         fusedLocationClient.removeLocationUpdates(locationCallback)
     }
-//    @SuppressLint("MissingPermission")
     @SuppressLint("MissingPermission")
     override fun onActive(){
         super.onActive()
@@ -31,8 +30,8 @@ class LocationLiveData(context : Context): LiveData<LocationDetails>() {
         startLocationUpdates()
     }
 
-  //  @SuppressLint("MissingPermission")
     @SuppressLint("MissingPermission")
+
     private fun startLocationUpdates(){
         fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, null)
     }
@@ -60,7 +59,7 @@ class LocationLiveData(context : Context): LiveData<LocationDetails>() {
         val locationRequest : LocationRequest = LocationRequest.create().apply{
             interval = ONE_MINUTE
             fastestInterval = ONE_MINUTE/4
-            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+            priority = LocationRequest.PRIORITY_LOW_POWER
         }
     }
 }

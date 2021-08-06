@@ -5,8 +5,10 @@
         <item>Haunted</item>
         <item>Guitar</item>
         <item>Railroad</item>
+        <item>Sports</item>
     </string-array>
     <string name="bucketListItems">Select Interests</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
