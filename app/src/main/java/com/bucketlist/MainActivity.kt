@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance(),)
+                .replace(R.id.container, MainFragment.newInstance())
                 .commitNow()
         }
         val spinner: Spinner = findViewById(R.id.interests_spinner)
@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity() {
         val searchButton = findViewById<Button>(R.id.search_button)
         searchButton.setOnClickListener {
             // Handler code here.
-            val intent = Intent(this, PlacesActivity::class.java)
-            startActivity(intent)
+          //  val intent = Intent(this, PlacesActivity::class.java)
+          //  startActivity(intent)
         }
         val locationButton = findViewById<Button>(R.id.btnMap)
         locationButton.setOnClickListener {

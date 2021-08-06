@@ -37,9 +37,9 @@ class LocationLiveData(context : Context): LiveData<LocationDetails>() {
     }
 
     private val locationCallback = object: LocationCallback() {
-       override fun onLocationResult(locationResult: LocationResult?){
+       override fun onLocationResult(locationResult: LocationResult){
             super.onLocationResult(locationResult)
-            locationResult ?: return
+           // locationResult?: return
             for(location in locationResult.locations){
                if(location!=null){
                    setLocationData(location)
@@ -54,7 +54,7 @@ class LocationLiveData(context : Context): LiveData<LocationDetails>() {
     }
 
     companion object{
-        val ONE_MINUTE : Long = 60000
+        val ONE_MINUTE : Long = 160000
         val locationRequest : LocationRequest = LocationRequest.create().apply{
             interval = ONE_MINUTE
             fastestInterval = ONE_MINUTE/4
