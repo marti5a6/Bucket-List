@@ -53,6 +53,11 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         applicationViewModel = ViewModelProviders.of(this).get(ApplicationViewModel::class.java)
 
+
+//        applicationViewModel.placeService.getLocalPlaceDAO().fetchPlaces().observe(this, Observer {
+//
+//        })
+
         prepRequestLocationUpdates()
 
         val recyclerView: RecyclerView = binding.root.findViewById(R.id.recyclerview)
@@ -85,6 +90,9 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         }
     }
 
+
+
+
     private fun requestLocationUpdates() {
 
         /*Could not resolve error with getLocationLiveData
@@ -116,7 +124,7 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
             }
         }
     }
-    inner class PlaceInfoAdapter(val places: List<PlaceInfo>, val itemLayout: Int) : RecyclerView.Adapter<MainFragment.PlaceViewHolder>(){
+    inner class PlaceInfoAdapter(val places: List<PlaceInfo>,val itemLayout: Int) : RecyclerView.Adapter<PlaceViewHolder>(){
         /**
          * Called when RecyclerView needs a new [ViewHolder] of the given type to represent
          * an item.
@@ -140,7 +148,7 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
          * @see .getItemViewType
          * @see .onBindViewHolder
          */
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainFragment.PlaceViewHolder {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaceViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(itemLayout, parent, false)
             return PlaceViewHolder(view)
         }
@@ -166,7 +174,7 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
          * item at the given position in the data set.
          * @param position The position of the item within the adapter's data set.
          */
-        override fun onBindViewHolder(holder: MainFragment.PlaceViewHolder, position: Int) {
+        override fun onBindViewHolder(holder: PlaceViewHolder, position: Int) {
             val place = places.get(position)
             holder.updatePlaceInfo(place)
         }
@@ -186,12 +194,10 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         private var lblName: TextView = itemView.findViewById(R.id.lblName)
         private var lblCoordinates: TextView = itemView.findViewById(R.id.lblCoordinates)
 
+
         fun updatePlaceInfo(placeInfo: PlaceInfo) {
             placeInfo.getPlaceName()
             placeInfo.getPlaceCoordinates()
-            lblName.text = placeInfo.toString()
         }
-
     }
-
 }
