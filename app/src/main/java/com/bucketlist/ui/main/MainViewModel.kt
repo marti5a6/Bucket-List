@@ -17,7 +17,7 @@ class MainViewModel : ViewModel() {
 var _placeService : PlaceService = PlaceService(application = Application())
     private var _bucketListItems: MutableLiveData<ArrayList<BucketListItem>> = MutableLiveData<ArrayList<BucketListItem>>()
 
-    internal var bucketlistitems:MutableLiveData<ArrayList<BucketListItem>>
+    internal var bucketlistitems: MutableLiveData<ArrayList<BucketListItem>>
         get () {return _bucketlistitems}
         set (value) {_bucketlistitems = value}
 

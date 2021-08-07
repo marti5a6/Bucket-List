@@ -7,7 +7,7 @@ import com.bucketlist.dto.BucketListItem
 @Dao
 interface ILocalBucketListItemDAO {
     @Query("SELECT * FROM bucketlistitem")
-    fun getAll()  : LiveData<List<BucketListItem>>
+    fun getAll() : LiveData<List<BucketListItem>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(bucketListItems: BucketListItem)
