@@ -14,20 +14,16 @@ import retrofit2.Call
 
 class PlaceService(application: Application) {
     private val application = application
-    private var locationString = "36.950030,14.537220"
-
-    internal suspend fun fetchPlaces(name: String) {
+     var category: String = "point_of_interest"
+    internal suspend fun fetchPlaces(locationString: String,cat: String) {
         withContext(Dispatchers.IO) {
-            if(name!=null){locationString=name}
+            if(cat!=null){category=cat}
             val service = RetrofitClientInstance.retrofitInstance?.create(IPlaceDAO::class.java)
-            val apikey: String = System.getenv("gapi_k") ?: "default_value"
-            val places = async {service?.getPlaces(apikey,locationString)}
+            val apikey: String = System.getenv("gapi_k") ?: "AIzaSyBL6Ub8ffOAv4WmltnUu9TIXkVJ61KhwOY"
+            val places = async {service?.getPlaces(apikey,locationString,category)}
 
-            coroutineScope {
-                launch{
-                    updateLocalPlaces(places.await())
-                }
-            }
+            updateLocalPlaces(places.await())
+
         }
     }
 

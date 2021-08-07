@@ -10,6 +10,8 @@ import com.bucketlist.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
+  //  private lateinit var mainViewModel: MainViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.container, MainFragment.newInstance())
                 .commitNow()
         }
+     //   mainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         val spinner: Spinner = findViewById(R.id.interests_spinner)
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
@@ -31,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             spinner.adapter = adapter
         }
 
+
         val locationButton = findViewById<Button>(R.id.btnMap)
         locationButton.setOnClickListener {
             // Handler code here.
@@ -39,6 +43,7 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+
 
     }
 

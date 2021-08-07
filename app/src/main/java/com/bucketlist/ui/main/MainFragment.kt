@@ -1,39 +1,34 @@
 package com.bucketlist.ui.main
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.pm.PackageManager
-import android.location.Location
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bucketlist.R
 import com.bucketlist.databinding.MainActivityBinding
-import com.bucketlist.dto.LocationDetails
+import com.bucketlist.databinding.MainFragmentBinding
 import com.bucketlist.dto.PlaceInfo
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
-import java.lang.Exception
 
 class MainFragment : Fragment() {
 
 private val LOCATION_PERMISSION_REQUEST_CODE=2000
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var mainViewModel: MainViewModel
     private lateinit var applicationViewModel: ApplicationViewModel
     private lateinit var binding: MainActivityBinding
     private var _places = ArrayList<PlaceInfo>()
+    private lateinit var  spinner: Spinner
 
     private var latitude=""
     private var longitude=""
@@ -42,8 +37,21 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,): View {
-
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        spinner = binding.root.findViewById(R.id.interests_spinner)
+      var cat= "point_of_interest"
+        if(spinner!=null){
+            if(spinner.isSelected) {
+                cat = spinner.selectedItem.toString()
+            }
+        }
+        mainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        var view: View = inflater.inflate(R.layout.main_fragment, container, false)
+        var searchButton: Button = view.findViewById<Button>(R.id.search_button)
+        searchButton.setOnClickListener {
+            Toast.makeText(view.context, cat, Toast.LENGTH_SHORT).show()
+            mainViewModel.getPlaces("$latitude,$longitude",cat)
+       }
+        return view
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,25 +62,16 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+
         applicationViewModel = ViewModelProviders.of(this).get(ApplicationViewModel::class.java)
-
-        val searchButton = binding.root.findViewById<Button>(R.id.search_button)
-        searchButton.setOnClickListener {
-            viewModel.getPlaces("$latitude,$longitude")
-        }
-
-//        applicationViewModel.placeService.getLocalPlaceDAO().fetchPlaces().observe(this, Observer {
-//
-//        })
 
         prepRequestLocationUpdates()
 
-        val recyclerView: RecyclerView = binding.root.findViewById(R.id.recyclerview)
-        val layoutManager = LinearLayoutManager(context)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.itemAnimator = DefaultItemAnimator()
-        recyclerView.adapter = PlaceInfoAdapter(_places, R.layout.rowlayout)
+//        val recyclerView: RecyclerView = binding.root.findViewById(R.id.recyclerview)
+//        val layoutManager = LinearLayoutManager(context)
+//        recyclerView.layoutManager = layoutManager
+//        recyclerView.itemAnimator = DefaultItemAnimator()
+//        recyclerView.adapter = PlaceInfoAdapter(_places, R.layout.rowlayout)
 
     }
 
@@ -81,14 +80,6 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         fun newInstance() = MainFragment()
     }
 
-   // fun prepRequestLocationUpdates(){
-     //   if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED){
-       //     requestLocationUpdates()
-        //}else{
-          //  val permissionRequest = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION)
-            //requestPermissions(permissionRequest,LOCATION_PERMISSION_REQUEST_CODE)
-        //}
-    //}
     fun prepRequestLocationUpdates(){
         if(ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)==PackageManager.PERMISSION_GRANTED){
             requestLocationUpdates()
@@ -98,16 +89,7 @@ private val LOCATION_PERMISSION_REQUEST_CODE=2000
         }
     }
 
-
-
-
     private fun requestLocationUpdates() {
-
-        /*Could not resolve error with getLocationLiveData
-        so hardcoding cincinnati for now
-        * */
-        //latitude="39.1031"
-        //longitude="84.5120"
         applicationViewModel.getLocationLiveData().observe(viewLifecycleOwner, Observer {
            it.latitude
            it.longitude
