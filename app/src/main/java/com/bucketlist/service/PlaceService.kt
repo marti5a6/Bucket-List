@@ -34,7 +34,7 @@ class PlaceService(application: Application) {
     /**
      * Store these places locally, so that we can use the data without network latency
      */
-    private suspend fun updateLocalPlaces(places: Call<ArrayList<PlaceInfo>>?) {
+    private fun updateLocalPlaces(places: Call<ArrayList<PlaceInfo>>?) {
      //  var sizeOfPlaces = places?.size
         try {
             var localPlaceDAO = getLocalPlaceDAO()
