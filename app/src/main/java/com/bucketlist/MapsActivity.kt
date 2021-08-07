@@ -88,7 +88,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         for (i in mlocationArray)
         mMap.addMarker(MarkerOptions().position(i).title("Marker in Cincinnati"))
         for (i in mlocationArray)
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(5.0f))
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(12.0f))
         for (i in mlocationArray)
         mMap.moveCamera(CameraUpdateFactory.newLatLng(i))
     }
